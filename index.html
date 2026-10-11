@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management System</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .today {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffc107;
+        }
+
+        .today h2 {
+            color: #856404;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Client Management System</h1>
+        <p>Organize your clients. Track your projects. Grow your IT business.</p>
+    </header>
+
+    <main>
+
+        <!-- TODAY'S FOCUS -->
+        <section class="today">
+            <h2>Today's Focus</h2>
+            <p>Follow up with 2 clients and send 1 project proposal.</p>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services">
+            <h2>Core Software &amp; IT Services</h2>
+
+            <div class="service-grid">
+
+                <div class="service">
+                    <img src="images/software-development.svg" alt="Code window with brackets">
+                    <h3>Software Development</h3>
+                    <p>Custom web, mobile and desktop applications built with React, Node.js, Next.js and Python.</p>
+                </div>
+
+                <div class="service">
+                    <img src="images/system-integration.svg" alt="Connected systems diagram">
+                    <h3>System Integration &amp; Automation</h3>
+                    <p>Industrial control systems, workflow automation and enterprise resource planning (ERP) setup.</p>
+                </div>
+
+                <div class="service">
+                    <img src="images/cybersecurity.svg" alt="Shield with a lock">
+                    <h3>Cybersecurity &amp; Networking</h3>
+                    <p>Network infrastructure setup, penetration testing and security hardening.</p>
+                </div>
+
+                <div class="service">
+                    <img src="images/data-ai.svg" alt="Bar chart and neural network">
+                    <h3>Data Science &amp; AI</h3>
+                    <p>Machine learning model training, computer vision and database management.</p>
+                </div>
+
+                <div class="service">
+                    <img src="images/cloud-it.svg" alt="Cloud with server stack">
+                    <h3>Cloud &amp; IT Support</h3>
+                    <p>Cloud hosting on AWS and Azure, deployment, monitoring and everyday IT support.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CLIENT LIST TABLE -->
+        <section class="clients">
+            <h2>Client List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client Name</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="clientTable">
+                    <tr>
+                        <td>C001</td>
+                        <td>Alex Tan</td>
+                        <td>Software Development</td>
+                        <td><span class="status active">Active</span></td>
+                    </tr>
+                    <tr>
+                        <td>C002</td>
+                        <td>Sarah Murphy</td>
+                        <td>Cybersecurity &amp; Networking</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>C003</td>
+                        <td>David Lee</td>
+                        <td>Cloud &amp; IT Support</td>
+                        <td><span class="status done">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>C004</td>
+                        <td>Maria Gomez</td>
+                        <td>Data Science &amp; AI</td>
+                        <td><span class="status active">Active</span></td>
+                    </tr>
+                </tbody>
+
+                <!-- Colspan -->
+                <tfoot>
+                    <tr>
+                        <td colspan="4" id="totalClients">Total Clients: 4</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- WEEKLY MEETING SCHEDULE (ROWSPAN + COLSPAN) -->
+        <section class="schedule">
+            <h2>Weekly Meeting Schedule</h2>
+
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Client</th>
+                    <th>Purpose</th>
+                </tr>
+
+                <!-- Rowspan -->
+                <tr>
+                    <td rowspan="2">Monday</td>
+                    <td>10:00 AM</td>
+                    <td>Alex Tan</td>
+                    <td>App Design Review</td>
+                </tr>
+                <tr>
+                    <td>2:00 PM</td>
+                    <td>Sarah Murphy</td>
+                    <td>Security Audit Report</td>
+                </tr>
+
+                <tr>
+                    <td>Wednesday</td>
+                    <td>11:00 AM</td>
+                    <td>Maria Gomez</td>
+                    <td>Model Training Update</td>
+                </tr>
+
+                <!-- Colspan -->
+                <tr>
+                    <td colspan="4">Friday - Admin and Invoice Day</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- CLIENT INFORMATION - UL -->
+        <section class="materials">
+            <h2>Client Information to Collect</h2>
+            <p>Details needed for every new client:</p>
+
+            <ul>
+                <li>Full Name and Company</li>
+                <li>Email and Phone Number</li>
+                <li>Service Required</li>
+                <li>Project Budget and Start Date</li>
+                <li>Preferred Contact Method</li>
+            </ul>
+        </section>
+
+        <!-- CLIENT WORKFLOW - OL -->
+        <section class="steps">
+            <h2>Client Workflow</h2>
+            <p>Steps followed for every client:</p>
+
+            <ol>
+                <li>Receive client enquiry</li>
+                <li>Discuss requirements</li>
+                <li>Send proposal and quotation</li>
+                <li>Build, test and deliver the project</li>
+                <li>Send invoice and collect feedback</li>
+            </ol>
+        </section>
+
+        <!-- MOTTO (INLINE CSS) -->
+        <section class="motivation">
+            <h2>Business Motto</h2>
+            <p style="color: green; font-weight: bold;">
+                Happy clients bring more clients!
+            </p>
+        </section>
+
+        <!-- ADD CLIENT FORM -->
+        <section class="client-form">
+            <h2>Add New Client</h2>
+
+            <form id="clientForm">
+
+                <label for="name">Client Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter client name" required>
+
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter client email">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+
+                <label for="service">Service Required:</label>
+                <select id="service" name="service">
+                    <option>Software Development</option>
+                    <option>System Integration &amp; Automation</option>
+                    <option>Cybersecurity &amp; Networking</option>
+                    <option>Data Science &amp; AI</option>
+                    <option>Cloud &amp; IT Support</option>
+                </select>
+
+                <label for="date">Project Start Date:</label>
+                <input type="date" id="date" name="date">
+
+                <label for="budget">Budget (USD):</label>
+                <input type="number" id="budget" name="budget" placeholder="Enter budget">
+
+                <p>Client Type:</p>
+                <label>
+                    <input type="radio" name="client-type" value="new" checked> New Client
+                </label>
+                <label>
+                    <input type="radio" name="client-type" value="returning"> Returning Client
+                </label>
+
+                <p>Preferred Contact Method:</p>
+                <label><input type="checkbox" name="contact" value="email"> Email</label>
+                <label><input type="checkbox" name="contact" value="phone"> Phone</label>
+                <label><input type="checkbox" name="contact" value="whatsapp"> WhatsApp</label>
+
+                <label for="notes">Project Notes:</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Write project details or requirements..."></textarea>
+
+                <button type="submit">Save Client</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Client Management System</p>
+    </footer>
+
+<script>
+    var table = document.getElementById("clientTable");
+
+    document.getElementById("clientForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Stops the page from refreshing
+
+        // New client ID, for example C005
+        var number = table.rows.length + 1;
+        var id = "C" + String(number).padStart(3, "0");
+
+        var row = document.createElement("tr");
+        [id,
+         document.getElementById("name").value.trim(),
+         document.getElementById("service").value].forEach(function (text) {
+            var cell = document.createElement("td");
+            cell.textContent = text;
+            row.appendChild(cell);
+        });
+
+        var statusCell = document.createElement("td");
+        statusCell.innerHTML = '<span class="status pending">Pending</span>';
+        row.appendChild(statusCell);
+
+        table.appendChild(row);
+        document.getElementById("totalClients").textContent = "Total Clients: " + table.rows.length;
+
+        this.reset();
+        alert("Client saved successfully!");
+    });
+</script>
+
+</body>
+
+</html>
